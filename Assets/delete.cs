@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class delete : MonoBehaviour {
-
+	public GameObject del;
 	// Use this for initialization
 	void Start () {
 		
@@ -11,9 +11,13 @@ public class delete : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	}
 
-		if (!GetComponent<Renderer>().isVisible) {
-			Destroy(this.gameObject);
+	//オブジェクトが衝突したとき
+	void OnCollisionEnter(Collision col) {
+		if (col.gameObject.CompareTag ("del")) {
+			Instantiate (del, new Vector3( transform.position.x,-5f,0f), Quaternion.identity);
+			Destroy (gameObject);
 		}
 	}
 }

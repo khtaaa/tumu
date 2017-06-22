@@ -21,7 +21,7 @@ public class player : MonoBehaviour {
 		if (transform.position.x < -6)
 			transform.position = new Vector3 (-6f, -2f, 0f);
 
-		if (transform.position.x > -3)
-			transform.position = new Vector3 (-3f, -2f, 0f);
+		if (transform.position.x > -2)
+			transform.position = new Vector3 (-2f, -2f, 0f);
 	}
 }

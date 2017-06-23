@@ -17,7 +17,7 @@ public class Generator : MonoBehaviour {
 
 		if (time > 3) {
 			time = 0;
-			Instantiate (obj[(int)Random.Range(0,obj.Length)], new Vector3 (-5, 3, 0), Quaternion.identity);
+			Instantiate (obj[(int)Random.Range(0,obj.Length)], new Vector3 (-5, 5, 0), Quaternion.identity);
 		}
 	}
 }

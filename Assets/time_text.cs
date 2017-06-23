@@ -15,7 +15,7 @@ public class time_text : MonoBehaviour {
 		button.SetActive (false);
 		height_text.GetComponent<Text> ().enabled = false;
 		text.GetComponent<Text> ().enabled = false;
-		time = 60;
+		time = 120;
 		GetComponent<Text> ().text =""+(int)time;
 
 	}

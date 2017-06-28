@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class delete : MonoBehaviour {
 	public GameObject del;
+	public GameObject mainasu;
+	public GameObject SE;
 	public bool ok;
 	// Use this for initialization
 	void Start () {
-		
+		SE = GameObject.Find ("SE");
 	}
 	
 	// Update is called once per frame
@@ -21,10 +23,14 @@ public class delete : MonoBehaviour {
 	//オブジェクトが衝突したとき
 	void OnCollisionEnter(Collision col) {
 		
-		if(col.gameObject.CompareTag("block"))
+		if (!col.gameObject.CompareTag ("Player")&& !col.gameObject.CompareTag("del"))
+			SE.GetComponent<SE> ().koukaon (1);
 			ok = true;
 		if (col.gameObject.CompareTag ("del")) {
+			SE.GetComponent<SE> ().koukaon (2);
 			Instantiate (del, new Vector3( transform.position.x,-5f,0f), Quaternion.identity);
+			Instantiate (mainasu);
+			time_text.time--;
 			Destroy (gameObject);
 		}
 	}

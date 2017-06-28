@@ -6,6 +6,7 @@ public class player : MonoBehaviour {
 	public float move;
 	public float rote;
 	public static bool ok;
+	public GameObject SE;
 	// Use this for initialization
 	void Start () {
 		
@@ -27,5 +28,9 @@ public class player : MonoBehaviour {
 				transform.position = new Vector3 (-2f, -2f, 0f);
 
 		}
+	}
+
+	void OnCollisionEnter(Collision col) {
+		SE.GetComponent<SE> ().koukaon (0);
 	}
 }

@@ -10,6 +10,7 @@ public class height_text : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		foundation = null;
 		height = -5;
 		GetComponent<Text> ().text ="";
 	}
@@ -25,6 +26,6 @@ public class height_text : MonoBehaviour {
 		rust_height = rust_height * 10;
 		rust_height = Mathf.Floor (rust_height);
 		rust_height = rust_height /10;
-			GetComponent<Text> ().text ="今回の記録:"+rust_height+"M";
+		GetComponent<Text> ().text ="record:"+rust_height+"M";
 	}
 }
